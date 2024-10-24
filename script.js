@@ -12,20 +12,24 @@ addTodoButton.addEventListener('click', function() {
 });
  
 
-  // Function to create a to-do item
-  function addTodoItem(text) {
+    // Function to create a to-do item
+function addTodoItem(text) {
     const li = document.createElement('li');
     li.className = 'flex justify-between items-center p-2 border-b';
 
     const span = document.createElement('span');
     span.textContent = text;
+    span.className = 'flex-1';
 
     const editButton = document.createElement('button');
-    editButton.innerHTML = 'Edit';
+    editButton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
+    editButton.className = 'mx-2 px-2 py-1 bg-yellow-500 text-white rounded';
 
     const deleteButton = document.createElement('button');
-    deleteButton.innerHTML = 'Delete';
+    deleteButton.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
+    deleteButton.className = 'px-2 py-1 bg-red-500 text-white rounded';
 
     const doneButton = document.createElement('button');
-    doneButton.innerHTML = 'Done';
-  }
+    doneButton.innerHTML = '<i class="fa-regular fa-square-check"></i>';
+    doneButton.className = 'px-2 py-1 mr-2 bg-green-500 text-white rounded';
+}
