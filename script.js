@@ -59,6 +59,15 @@ function addTodoItem(text) {
         li.appendChild(saveButton);
     })
 
+    deleteButton.addEventListener('click', function() {
+        todoList.removeChild(li);
+    });
+
+    doneButton.addEventListener('click', function() {
+        span.classList.toggle('line-through');
+        
+    });
+
     li.appendChild(span);
     li.appendChild(editButton);
     li.appendChild(doneButton);
