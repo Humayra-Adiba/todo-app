@@ -32,4 +32,12 @@ function addTodoItem(text) {
     const doneButton = document.createElement('button');
     doneButton.innerHTML = '<i class="fa-regular fa-square-check"></i>';
     doneButton.className = 'px-2 py-1 mr-2 bg-green-500 text-white rounded';
+
+    
+    editButton.addEventListener('click', function() {
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.className = 'flex-1 p-1 border rounded outline-none';
+        input.value = span.textContent;
+    })
 }
