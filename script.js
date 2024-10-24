@@ -3,7 +3,8 @@ const addTodoButton = document.getElementById('add-todo');
 const todoList = document.getElementById('todo-list');
 
     // Add new event to make to-dos
-addTodoButton.addEventListener('click', function() {
+addTodoButton.addEventListener('click', function(e) {
+    e.preventDefault();
     const todoText = newTodoInput.value;
     if (todoText) {
         addTodoItem(todoText);
@@ -37,7 +38,26 @@ function addTodoItem(text) {
     editButton.addEventListener('click', function() {
         const input = document.createElement('input');
         input.type = 'text';
-        input.className = 'flex-1 p-1 border rounded outline-none';
+        input.className = 'flex-1 p-3 border rounded outline-none';
         input.value = span.textContent;
+
+        const saveButton = document.createElement('button');
+        saveButton.textContent = 'Save';
+        saveButton.className = 'ml-2 px-3 py-2 bg-green-500 text-white rounded';
+
+        saveButton.addEventListener('click', function() {
+            span.textContent = input.value;
+  
+            li.removeChild(input);
+            li.removeChild(saveButton);
+            li.appendChild(span);
+            
+        });
+
+        li.removeChild(span);
+        li.appendChild(input);
+        li.appendChild(saveButton);
     })
+    
 }
+
