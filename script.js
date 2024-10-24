@@ -58,6 +58,12 @@ function addTodoItem(text) {
         li.appendChild(input);
         li.appendChild(saveButton);
     })
+
+    li.appendChild(span);
+    li.appendChild(editButton);
+    li.appendChild(doneButton);
+    li.appendChild(deleteButton);
+    todoList.appendChild(li);
     
 }
 
